@@ -24,11 +24,13 @@ export default function HomeScreen() {
             {description}
           </Text>
         </View>
+<View>
 
         <Image
-          style={{ width: 120, height: 150, resizeMode: 'contain', }}
-          source={require('../../assets/images/cardshadow.png')}
-        />
+          style={{ width: 120, height: 120, resizeMode: 'contain', }}
+          source={require('../../assets/images/card-img.png')}
+          />
+          </View>
       </View>
     );
   };
