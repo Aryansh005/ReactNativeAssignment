@@ -1,40 +1,9 @@
-import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import Card from "../../components/Card";
 import HeroPanel from "../../components/HeroPanel";
 
 export default function HomeScreen() {
-  const Card = ({ title, description, bgColor }) => {
-    return (
-      <View
-        style={{
-          width: '100%',
-          height: 196,
-          backgroundColor: bgColor,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          // paddingLeft: 20,
-          borderRadius: 20,
-        }}
-      >
-        <View style={{ flex: 1, gap: 12, padding: 20 }}>
-          <Text style={{ fontSize: 16, fontWeight: '600', color: '#111315' }}>
-            {title}
-          </Text>
-          <Text style={{ fontSize: 14.22, fontWeight: '300', color: '#111315' }}>
-            {description}
-          </Text>
-        </View>
-<View>
-
-        <Image
-          style={{ width: 120, height: 120, resizeMode: 'contain', }}
-          source={require('../../assets/images/card-img.png')}
-          />
-          </View>
-      </View>
-    );
-  };
-
   return (
     <View style={styles.container}>
       <HeroPanel />
@@ -57,6 +26,6 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: "white",
   },
 });

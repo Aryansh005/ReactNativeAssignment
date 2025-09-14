@@ -11,19 +11,19 @@ const RotatingText = () => {
     const interval = setInterval(() => {
       Animated.timing(opacity, {
         toValue: 0,
-        duration: 300,
+        duration: 500,
         easing: Easing.out(Easing.ease),
         useNativeDriver: true,
       }).start(() => {
         setIndex((prev) => (prev + 1) % words.length);
         Animated.timing(opacity, {
           toValue: 1,
-          duration: 300,
+          duration: 500,
           easing: Easing.out(Easing.ease),
           useNativeDriver: true,
         }).start();
       });
-    }, 1000); 
+    }, 1500); 
 
     return () => clearInterval(interval);
   }, [opacity]);

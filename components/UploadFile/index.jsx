@@ -29,7 +29,7 @@ const UploadFile = () => {
       pathname: "/imagePreview",
       params: {
         uri: image.uri,
-        name: image.fileName ?? "unknown.jpg", // fallback
+        name: image.fileName ?? "unknown.jpg",
       },
     });
     }

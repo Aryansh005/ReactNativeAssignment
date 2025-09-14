@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
 import React from "react";
-import { Image } from "react-native";
+import { Image, Platform } from "react-native";
 
 import { HapticTab } from "@/components/haptic-tab";
 import { Colors } from "@/constants/theme";
@@ -18,9 +18,31 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
         tabBarButton: HapticTab,
+        tabBarStyle: {
+          backgroundColor: "#FAFAFA",
+          height: Platform.OS === "ios" ? 85 : 70, 
+          borderTopWidth: 0,
+          borderTopLeftRadius: 16,
+          borderTopRightRadius: 16,
+          elevation: 10, 
+          shadowColor: "#000", 
+          shadowOffset: {
+            width: 0,
+            height: -2,
+          },
+          shadowOpacity: 0.1,
+          shadowRadius: 4,
+          position: "absolute",
+        },
+        tabBarItemStyle: {
+          paddingVertical: 8, 
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          marginBottom: Platform.OS === "ios" ? 20 : 5, 
+        },
       }}
     >
-      {/* Home */}
       <Tabs.Screen
         name="index"
         options={{
@@ -41,7 +63,6 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Prescription */}
       <Tabs.Screen
         name="prescription"
         options={{
